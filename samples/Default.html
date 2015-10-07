@@ -1,0 +1,61 @@
+<html>
+
+<head>
+    <title>calienteJS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap-theme.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-default navbar-static-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="https://github.com/felipegtx/calienteJS" target="_blank">
+                    calienteJS
+                </a>
+                <p class="navbar-text  navbar-right">
+                    Also check out my other project
+                    <a href="https://github.com/felipegtx/Raska/" target="_blank">
+                        <strong>Raska</strong>
+                    </a>&nbsp;&nbsp;&nbsp;
+                </p>
+            </div>
+        </nav>
+        <div role="tabpanel" class="tab-pane active" id="info">
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <canvas id="raskaHeatMap" style="border: 1px solid silver;" width="600" height="300"></canvas>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+        <br /><br />
+    </div>
+    <script src="../dist/caliente.js"></script>
+
+    <!-- Optional for ploting calienteJS' data -->
+    <script src="/plugin/raska.min.js"></script>
+    <script src="/plugin/raska.caliente.js"></script>
+
+    <script>
+
+        /// Caliente tracking code
+        caliente
+            .track()
+            .onMove(function (data) {
+
+                /// OPTIONAL
+                /// Use raska to plot this data
+                raska.caliente.plot(data);
+            });
+
+        /// OPTIONAL
+        /// Prepare raska to plot heatMap data
+        raska.caliente.prepare("raskaHeatMap");
+
+    </script>
+</body>
+</html>
