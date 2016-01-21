@@ -7,7 +7,7 @@ A simple page heatMap
 
 ## Usage
 
-Just add the reference to calienteJS
+Just add the reference to calienteJS and [Raska](https://github.com/felipegtx/Raska)
 
 ```html
 <script src="caliente.js"></script>
